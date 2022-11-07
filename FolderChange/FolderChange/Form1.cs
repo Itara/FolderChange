@@ -18,11 +18,21 @@ namespace FolderChange
         private string currentSourceFolder = string.Empty;
         private string mainPath = @"C:\ERP";
         private Dictionary<string, string> dicSourceFolderERPExcuteParameter = new Dictionary<string, string>();
+        private DataTable FolderDt = new DataTable();
 
         public Form1()
         {
             InitializeComponent();
             Init();
+            SetFolderDt();
+        }
+
+        private void SetFolderDt()
+        {
+            FolderDt.Columns.Clear();
+            FolderDt.Columns.Add("FolderName", typeof(string));
+            FolderDt.Columns.Add("FolderPath", typeof(string));
+            FolderDt.Columns.Add("FolderParameter", typeof(string));
         }
 
         private void Init()
@@ -30,7 +40,7 @@ namespace FolderChange
             di = new DirectoryInfo(path);
             currentSourceFolder = Properties.Settings.Default.SourceFolder;
             dgvFolderList.Rows.Clear();
-
+            FolderDt.Rows.Clear();
             string tmp = Properties.Settings.Default.SourceFolderExcuteParameter;
             string[] strArrParameter = tmp.Split(',');
             if(strArrParameter.Length>0 &&string.IsNullOrEmpty(strArrParameter[0]) == false)
