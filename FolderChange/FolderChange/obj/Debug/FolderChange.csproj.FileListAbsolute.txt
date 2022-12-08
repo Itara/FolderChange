@@ -22,7 +22,6 @@ D:\VisualStdioWorkSpace\FolderChange\FolderChange\obj\Debug\FolderChange.frmSetP
 C:\Users\Administrator\Source\Repos\Itara\FolderChange\FolderChange\FolderChange\bin\Debug\FolderChange.exe.config
 C:\Users\Administrator\Source\Repos\Itara\FolderChange\FolderChange\FolderChange\bin\Debug\FolderChange.exe
 C:\Users\Administrator\Source\Repos\Itara\FolderChange\FolderChange\FolderChange\bin\Debug\FolderChange.pdb
-C:\Users\Administrator\Source\Repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.csprojAssemblyReference.cache
 C:\Users\Administrator\Source\Repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.Form1.resources
 C:\Users\Administrator\Source\Repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.frmSetParamenter.resources
 C:\Users\Administrator\Source\Repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.Properties.Resources.resources

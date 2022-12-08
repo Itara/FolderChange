@@ -37,6 +37,7 @@ namespace FolderChange
             this.lblCurrentSouceFolder = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnSetERP = new System.Windows.Forms.Button();
             this.btnRemoveSource = new System.Windows.Forms.Button();
             this.btnChangeFolderName = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -61,7 +62,7 @@ namespace FolderChange
             this.chbTopMost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chbTopMost.Location = new System.Drawing.Point(3, 3);
             this.chbTopMost.Name = "chbTopMost";
-            this.chbTopMost.Size = new System.Drawing.Size(120, 62);
+            this.chbTopMost.Size = new System.Drawing.Size(120, 40);
             this.chbTopMost.TabIndex = 0;
             this.chbTopMost.Text = "창고정";
             this.chbTopMost.UseVisualStyleBackColor = true;
@@ -79,7 +80,7 @@ namespace FolderChange
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.18325F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 84.81676F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 490);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(762, 345);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -98,13 +99,13 @@ namespace FolderChange
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(756, 68);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(756, 46);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // txtFolderName
             // 
             this.txtFolderName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFolderName.Location = new System.Drawing.Point(568, 23);
+            this.txtFolderName.Location = new System.Drawing.Point(568, 12);
             this.txtFolderName.Name = "txtFolderName";
             this.txtFolderName.Size = new System.Drawing.Size(185, 21);
             this.txtFolderName.TabIndex = 2;
@@ -114,7 +115,7 @@ namespace FolderChange
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("돋움", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(379, 28);
+            this.label1.Location = new System.Drawing.Point(379, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(183, 12);
             this.label1.TabIndex = 3;
@@ -125,7 +126,7 @@ namespace FolderChange
             this.lblCurrentSouceFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCurrentSouceFolder.AutoSize = true;
             this.lblCurrentSouceFolder.Font = new System.Drawing.Font("돋움", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblCurrentSouceFolder.Location = new System.Drawing.Point(129, 28);
+            this.lblCurrentSouceFolder.Location = new System.Drawing.Point(129, 17);
             this.lblCurrentSouceFolder.Name = "lblCurrentSouceFolder";
             this.lblCurrentSouceFolder.Size = new System.Drawing.Size(244, 12);
             this.lblCurrentSouceFolder.TabIndex = 1;
@@ -140,20 +141,21 @@ namespace FolderChange
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.dgvFolderList, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 77);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 55);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(756, 410);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(756, 287);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 1;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Controls.Add(this.btnSetERP, 0, 3);
             this.tableLayoutPanel4.Controls.Add(this.btnRemoveSource, 0, 5);
             this.tableLayoutPanel4.Controls.Add(this.btnChangeFolderName, 0, 4);
-            this.tableLayoutPanel4.Controls.Add(this.button3, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.button3, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.btnSettingSourceFolder, 0, 2);
             this.tableLayoutPanel4.Controls.Add(this.btnMainFolerChange, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -166,15 +168,24 @@ namespace FolderChange
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66736F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66736F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.6632F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(189, 404);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(189, 281);
             this.tableLayoutPanel4.TabIndex = 1;
+            // 
+            // btnSetERP
+            // 
+            this.btnSetERP.Location = new System.Drawing.Point(3, 141);
+            this.btnSetERP.Name = "btnSetERP";
+            this.btnSetERP.Size = new System.Drawing.Size(183, 37);
+            this.btnSetERP.TabIndex = 6;
+            this.btnSetERP.UseVisualStyleBackColor = true;
             // 
             // btnRemoveSource
             // 
             this.btnRemoveSource.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRemoveSource.Location = new System.Drawing.Point(3, 338);
+            this.btnRemoveSource.Location = new System.Drawing.Point(3, 233);
             this.btnRemoveSource.Name = "btnRemoveSource";
-            this.btnRemoveSource.Size = new System.Drawing.Size(183, 63);
+            this.btnRemoveSource.Size = new System.Drawing.Size(183, 45);
             this.btnRemoveSource.TabIndex = 5;
             this.btnRemoveSource.Text = "소스삭제";
             this.btnRemoveSource.UseVisualStyleBackColor = true;
@@ -183,9 +194,9 @@ namespace FolderChange
             // btnChangeFolderName
             // 
             this.btnChangeFolderName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnChangeFolderName.Location = new System.Drawing.Point(3, 271);
+            this.btnChangeFolderName.Location = new System.Drawing.Point(3, 187);
             this.btnChangeFolderName.Name = "btnChangeFolderName";
-            this.btnChangeFolderName.Size = new System.Drawing.Size(183, 61);
+            this.btnChangeFolderName.Size = new System.Drawing.Size(183, 40);
             this.btnChangeFolderName.TabIndex = 4;
             this.btnChangeFolderName.Text = "선택폴더\r\n이름변경";
             this.btnChangeFolderName.UseVisualStyleBackColor = true;
@@ -194,9 +205,9 @@ namespace FolderChange
             // button3
             // 
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button3.Location = new System.Drawing.Point(3, 204);
+            this.button3.Location = new System.Drawing.Point(3, 49);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(183, 61);
+            this.button3.Size = new System.Drawing.Size(183, 40);
             this.button3.TabIndex = 3;
             this.button3.Text = "새로고침";
             this.button3.UseVisualStyleBackColor = true;
@@ -205,9 +216,9 @@ namespace FolderChange
             // btnSettingSourceFolder
             // 
             this.btnSettingSourceFolder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSettingSourceFolder.Location = new System.Drawing.Point(3, 137);
+            this.btnSettingSourceFolder.Location = new System.Drawing.Point(3, 95);
             this.btnSettingSourceFolder.Name = "btnSettingSourceFolder";
-            this.btnSettingSourceFolder.Size = new System.Drawing.Size(183, 61);
+            this.btnSettingSourceFolder.Size = new System.Drawing.Size(183, 40);
             this.btnSettingSourceFolder.TabIndex = 2;
             this.btnSettingSourceFolder.Text = "ERP폴더\r\n설정";
             this.btnSettingSourceFolder.UseVisualStyleBackColor = true;
@@ -218,7 +229,7 @@ namespace FolderChange
             this.btnMainFolerChange.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnMainFolerChange.Location = new System.Drawing.Point(3, 3);
             this.btnMainFolerChange.Name = "btnMainFolerChange";
-            this.btnMainFolerChange.Size = new System.Drawing.Size(183, 61);
+            this.btnMainFolerChange.Size = new System.Drawing.Size(183, 40);
             this.btnMainFolerChange.TabIndex = 0;
             this.btnMainFolerChange.Text = "현재 ERP폴더\r\n명 변경";
             this.btnMainFolerChange.UseVisualStyleBackColor = true;
@@ -241,7 +252,7 @@ namespace FolderChange
             this.dgvFolderList.ReadOnly = true;
             this.dgvFolderList.RowTemplate.Height = 23;
             this.dgvFolderList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFolderList.Size = new System.Drawing.Size(555, 404);
+            this.dgvFolderList.Size = new System.Drawing.Size(555, 281);
             this.dgvFolderList.TabIndex = 2;
             this.dgvFolderList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFolderList_CellContentClick);
             // 
@@ -286,7 +297,7 @@ namespace FolderChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(762, 490);
+            this.ClientSize = new System.Drawing.Size(762, 345);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("돋움", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.Name = "Form1";
@@ -322,6 +333,7 @@ namespace FolderChange
         private System.Windows.Forms.DataGridViewButtonColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewButtonColumn Column5;
+        private System.Windows.Forms.Button btnSetERP;
     }
 }
 
