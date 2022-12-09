@@ -244,6 +244,7 @@ namespace FolderChange
             string strQuery = "update CurrentFolder set FolderExcuteParameter = '' , FolderName = '' ,FolderFullPath = '' ";
             access.ExcuteQuery(strQuery);
             Init();
+            GetFolderList();
         }
 
         private void StartProcess()
