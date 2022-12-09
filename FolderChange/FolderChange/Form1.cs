@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using ADOX;
 using System.Diagnostics;
+using System.Threading;
 
 namespace FolderChange
 {
@@ -140,6 +141,7 @@ namespace FolderChange
                 lblCurrentSouceFolder.Text = $"현재 소스 없음 ";
                 string strQuery = "update CurrentFolder set FolderExcuteParameter = '' , FolderName = '' ,FolderFullPath = '' ";
                 access.ExcuteQuery(strQuery);
+                GetFolderList();
                 Init();
             }
             
@@ -244,27 +246,44 @@ namespace FolderChange
             Init();
         }
 
-        private void StartProcess(string strParameter)
+        private void StartProcess()
         {
             try
             {
-                KillProcess();
-                Process.Start($"{ProcessPath}{ProcessName}", strParameter);
+                string strFolder = CurrentFolderDataTable.Rows[0]["FolderName"].ToString();
+                string strParameter = CurrentFolderDataTable.Rows[0]["FolderExcuteParameter"].ToString();
+                string strFolderFullPath = CurrentFolderDataTable.Rows[0]["FolderFullPath"].ToString();
+                Directory.Move(path + $"{strFolder}", path + $"ERP");
+                string StartPath = @"c:\erp\comm";
+                Process process = new Process();
+                process.StartInfo.UseShellExecute = false;
+                process.StartInfo.Arguments = strParameter;
+                process.StartInfo.FileName = $"{ProcessPath}{ProcessName}";
+                process.StartInfo.WorkingDirectory = StartPath;
+                process.Start();
+                GetFolderList();
+                Init();
             }
             catch (Exception ex) 
             {
-                MessageBox.Show("프로그램 실행 실패...ㅜ","실행오류",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("프로그램 실행 실패...ㅜ", "실행오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"{ex.Message}");
             }
         }
-        private void KillProcess()
+        private void KillProcess(string strFolderName)
         {
-            Process[] processes = Process.GetProcessesByName(ProcessName);
+            Process[] processes = Process.GetProcessesByName(ProcessName.Replace(".EXE",""));
             if (processes != null && processes.Length > 0)
             {
                 foreach (Process process in processes)
                 {
                     process.Kill();
                 }
+            }
+            if(Directory.Exists(path + $"{strFolderName}") == false)
+            {
+                Thread.Sleep(100);
+                Directory.Move(path + $"ERP", path + $"{strFolderName}");
             }
         }
 
@@ -274,10 +293,14 @@ namespace FolderChange
             {
                 string strParameter = dgvFolderList.Rows[e.RowIndex].Cells[3].Value.ToString();
                 string strFolder = dgvFolderList.Rows[e.RowIndex].Cells[0].Value.ToString();
+                string strFolderFullPath = dgvFolderList.Rows[e.RowIndex].Cells[1].Value.ToString();
+                //현재 돌고있는 프로세스 죽임
+                KillProcess(CurrentFolderDataTable.Rows[0]["FolderName"].ToString());
                 if (strFolder.Equals("ERP"))
                 {
                     strFolder = CurrentFolderDataTable.Rows[0]["FolderName"].ToString();
                     strParameter = CurrentFolderDataTable.Rows[0]["FolderExcuteParameter"].ToString();
+                    strFolderFullPath = CurrentFolderDataTable.Rows[0]["FolderFullPath"].ToString();
                 }
                 if (string.IsNullOrEmpty(strParameter))
                 {
@@ -291,13 +314,29 @@ namespace FolderChange
                         if (i > 0)
                         {
                             dgvFolderList.Rows[e.RowIndex].Cells[3].Value = strParameter;
-                            StartProcess(strParameter);
+                            //현재 ERP폴더 변경후
+                            strQuery = $"update CurrentFolder set FolderExcuteParameter = '{strParameter}' , FolderName = '{strFolder}' ,FolderFullPath = '{strFolderFullPath}'";
+                            i = access.ExcuteQuery(strQuery);
+                            CurrentFolderDataTable.Rows[0]["FolderExcuteParameter"] = strParameter;
+                            CurrentFolderDataTable.Rows[0]["FolderName"] = strFolder;
+                            CurrentFolderDataTable.Rows[0]["FolderFullPath"] = strFolderFullPath;
+                            //프로세스 시작
+                            StartProcess();
                         }
                     }
                 }
                 else
                 {
-                    StartProcess(strParameter);
+                    //현재 돌고있는 프로세스 죽임
+                    //KillProcess(CurrentFolderDataTable.Rows[0]["FolderName"].ToString());
+                    //현재 ERP폴더 변경후
+                    string strQuery = $"update CurrentFolder set FolderExcuteParameter = '{strParameter}' , FolderName = '{strFolder}' ,FolderFullPath = '{strFolderFullPath}'";
+                    int i = access.ExcuteQuery(strQuery); 
+                    CurrentFolderDataTable.Rows[0]["FolderExcuteParameter"] = strParameter;
+                    CurrentFolderDataTable.Rows[0]["FolderName"] = strFolder;
+                    CurrentFolderDataTable.Rows[0]["FolderFullPath"] = strFolderFullPath;
+
+                    StartProcess();
                 }
 
 
@@ -339,7 +378,8 @@ namespace FolderChange
 
         private void btnKillERP_Click(object sender, EventArgs e)
         {
-            KillProcess();
+            string strFolderName = CurrentFolderDataTable.Rows[0]["FolderName"].ToString();
+            KillProcess(strFolderName);
         }
     }
 }
