@@ -29,16 +29,24 @@ namespace FolderChange
         public Form1()
         {
             InitializeComponent();
-            if (File.Exists(strDBfilePath) == false)
+            String strDBCon = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + strDBfilePath + ";";
+            if (Environment.Is64BitOperatingSystem == false)
             {
-                String strDBCon = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + strDBfilePath + ";";
+                strDBCon = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + strDBfilePath + ";";
+            }
+            else
+            {
+                strDBCon = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={strDBfilePath}";
+            }
+            if (File.Exists(strDBfilePath) == false)
+            {        
                 ADOX.Catalog adoxCC = new ADOX.Catalog();
                 adoxCC.Create(strDBCon);
                 adoxCC.ActiveConnection = null;
                 adoxCC = null;
                 GC.Collect();
             }
-            access = new AccessDB($@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={strDBfilePath}");
+            access = new AccessDB(strDBCon);
             CheckSchema();
             GetFolderList();
             Init();
@@ -144,9 +152,6 @@ namespace FolderChange
                 GetFolderList();
                 Init();
             }
-            
-
-
         }
 
         private void btnSettingSourceFolder_Click(object sender, EventArgs e)
@@ -278,14 +283,29 @@ namespace FolderChange
             {
                 foreach (Process process in processes)
                 {
-                    process.Kill();
+                    try
+                    {
+                        process.Kill();
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show($"종료 오류 발생 ㅠ : {ex.Message}");
+                    }
                 }
             }
-            if(Directory.Exists(path + $"{strFolderName}") == false)
+            try
             {
-                Thread.Sleep(100);
-                Directory.Move(path + $"ERP", path + $"{strFolderName}");
+                if (Directory.Exists(path + $"{strFolderName}") == false)
+                {
+                    Thread.Sleep(100);
+                    Directory.Move(path + $"ERP", path + $"{strFolderName}");
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"폴더 이동 오류 발생 ㅠ : {ex.Message}");
+            }
+            
         }
 
         private void dgvFolderList_CellContentClick(object sender, DataGridViewCellEventArgs e)

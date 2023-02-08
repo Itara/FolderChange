@@ -31,7 +31,6 @@ C:\Users\Administrator\Source\Repos\Itara\FolderChange\FolderChange\FolderChange
 C:\Users\Administrator\Source\Repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.pdb
 C:\Users\Administrator\Source\Repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\Interop.ADOX.dll
 C:\Users\Administrator\Source\Repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.csproj.ResolveComReference.cache
-C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.csproj.AssemblyReference.cache
 C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\Interop.ADOX.dll
 C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.csproj.ResolveComReference.cache
 C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.Form1.resources
@@ -39,7 +38,8 @@ C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\De
 C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.Properties.Resources.resources
 C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.csproj.GenerateResource.cache
 C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.csproj.CoreCompileInputs.cache
-C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.TrustInfo.xml
-C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.exe.manifest
 C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.exe
 C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Debug\FolderChange.pdb
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\bin\Debug\FolderChange.exe.config
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\bin\Debug\FolderChange.exe
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\bin\Debug\FolderChange.pdb

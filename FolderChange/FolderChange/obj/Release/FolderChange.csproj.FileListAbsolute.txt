@@ -1,0 +1,12 @@
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\bin\Release\FolderChange.exe.config
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\bin\Release\FolderChange.exe
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\bin\Release\FolderChange.pdb
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Release\Interop.ADOX.dll
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Release\FolderChange.csproj.ResolveComReference.cache
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Release\FolderChange.Form1.resources
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Release\FolderChange.frmSetParamenter.resources
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Release\FolderChange.Properties.Resources.resources
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Release\FolderChange.csproj.GenerateResource.cache
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Release\FolderChange.csproj.CoreCompileInputs.cache
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Release\FolderChange.exe
+C:\Users\juhyun\source\repos\Itara\FolderChange\FolderChange\FolderChange\obj\Release\FolderChange.pdb

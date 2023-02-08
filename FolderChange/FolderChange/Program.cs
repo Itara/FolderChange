@@ -16,17 +16,12 @@ namespace FolderChange
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
             Application.Run(new Form1());
-
-            AppDomain currentDomain = AppDomain.CurrentDomain;
-
-            currentDomain.UnhandledException += new UnhandledExceptionEventHandler(MyHandler);
         }
-        static void MyHandler(object sender, UnhandledExceptionEventArgs args)
+        static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            Exception e = (Exception)args.ExceptionObject;
-            MessageBox.Show("처리되지 않은 오류 발생 ㅠ..");
-            MessageBox.Show($"{e.Message}");
+            MessageBox.Show((e.ExceptionObject as Exception).Message, "처리되지 않은 오류 발생 ㅠ..");
         }
 
     }
