@@ -17,6 +17,17 @@ namespace FolderChange
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+            AppDomain currentDomain = AppDomain.CurrentDomain;
+
+            currentDomain.UnhandledException += new UnhandledExceptionEventHandler(MyHandler);
         }
+        static void MyHandler(object sender, UnhandledExceptionEventArgs args)
+        {
+            Exception e = (Exception)args.ExceptionObject;
+            MessageBox.Show("처리되지 않은 오류 발생 ㅠ..");
+            MessageBox.Show($"{e.Message}");
+        }
+
     }
 }

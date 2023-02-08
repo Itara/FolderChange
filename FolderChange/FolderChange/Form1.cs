@@ -324,6 +324,10 @@ namespace FolderChange
                             //프로세스 시작
                             StartProcess();
                         }
+                        else
+                        {
+
+                        }
                     }
                 }
                 else
